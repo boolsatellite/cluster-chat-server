@@ -1,0 +1,3 @@
+/mnt/d/github/cluster-chat-server/testjson/cmake-build-debug/CMakeFiles/testjson.dir
+/mnt/d/github/cluster-chat-server/testjson/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/github/cluster-chat-server/testjson/cmake-build-debug/CMakeFiles/rebuild_cache.dir
