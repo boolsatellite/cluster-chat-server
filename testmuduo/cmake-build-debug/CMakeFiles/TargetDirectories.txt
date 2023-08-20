@@ -1,0 +1,3 @@
+/mnt/d/github/cluster-chat-server/testmuduo/cmake-build-debug/CMakeFiles/testmuduo.dir
+/mnt/d/github/cluster-chat-server/testmuduo/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/github/cluster-chat-server/testmuduo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
