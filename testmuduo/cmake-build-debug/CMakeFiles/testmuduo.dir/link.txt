@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/testmuduo.dir/testmuduo.cpp.o -o testmuduo 
+/usr/bin/c++ -g -g CMakeFiles/testmuduo.dir/testmuduo.cpp.o -o testmuduo  -lmuduo_net -lmuduo_base -lpthread 
