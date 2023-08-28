@@ -19065,8 +19065,6 @@ class basic_json
 
     This function reads from a compatible input. Examples are:
     - an array of 1-byte values
-    - strings with character/literal type with size of 1 byte
-    - input streams
     - container with contiguous storage of 1-byte values. Compatible container
       types include `std::vector`, `std::string`, `std::array`,
       `std::valarray`, and `std::initializer_list`. Furthermore, C-style

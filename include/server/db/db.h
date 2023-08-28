@@ -1,0 +1,36 @@
+//
+// Created by satellite on 2023-08-23.
+//
+
+#ifndef CHAT_DB_H
+#define CHAT_DB_H
+
+#include "mysql/mysql.h"
+#include "string"
+#include "muduo/base/Logging.h"
+
+static std::string server = "127.0.0.1";
+static std::string user = "root";
+static std::string password = "123456";
+static std::string dbname = "chat";
+
+class MySQL {
+public:
+    MySQL();
+
+    ~MySQL();
+
+    bool connect();
+
+    bool update(std::string sql);
+
+    MYSQL_RES* query(std::string sql);
+
+    MYSQL* getConn();
+
+private:
+    MYSQL *conn_;
+};
+
+
+#endif //CHAT_DB_H
