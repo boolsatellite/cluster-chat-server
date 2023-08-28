@@ -18,8 +18,6 @@ ChatServer::ChatServer(EventLoop *loop, const InetAddress addr, const string &na
     server_.setMessageCallback((std::bind(&ChatServer::onMessage,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)));
 
     server_.setThreadNum(4);
-
-
 }
 
 void ChatServer::start() {
@@ -27,7 +25,9 @@ void ChatServer::start() {
 }
 
 void ChatServer::onConnection(const TcpConnectionPtr &conn) {
+
     if(!conn->connected()) {              //用户断开连接
+        ChatService::instance()->clientCloseException(conn);
         conn->shutdown();
     }
 }

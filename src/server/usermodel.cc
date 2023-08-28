@@ -48,7 +48,6 @@ bool UserModel::updateState(User user) {
     MySQL mysql;
     if( mysql.connect() ) {
         if ( mysql.update(sql) ) {
-            user.setid(mysql_insert_id(mysql.getConn()));
             return true;
         }
     }

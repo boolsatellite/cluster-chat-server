@@ -31,6 +31,7 @@ bool MySQL::update(std::string sql) {
         LOG_INFO << __FILE__ << ";" << __LINE__ << ":" << sql << "更新失败";
         return false;
     }
+    LOG_INFO << __FILE__ << ";" << __LINE__ << ":" << sql << "更新成功";
     return true;
 }
 
@@ -39,6 +40,7 @@ MYSQL_RES* MySQL::query(std::string sql) {
         LOG_INFO << __FILE__ << ":" << __LINE__ << ":" << sql << "查询失败";
         return nullptr;
     }
+    LOG_INFO << __FILE__ << ":" << __LINE__ << ":" << sql << "查询车工";
     return mysql_use_result(conn_);
 }
 
