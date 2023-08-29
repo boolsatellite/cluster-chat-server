@@ -10,6 +10,7 @@
 #include "unordered_map"
 #include "functional"
 #include "usermodel.h"
+#include "offlinemessagemodel.h"
 #include "thread"
 #include "mutex"
 
@@ -25,8 +26,10 @@ public:
     void login(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
     //处理注册业务
     void reg(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
-
+    //异常退出处理
     void clientCloseException(const muduo::net::TcpConnectionPtr& conn);
+    //一对一聊天业务
+    void oneChat(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
 
     //获取消息对应的处理器
     MsgHandler getHandler(int msgid);
@@ -43,6 +46,9 @@ private:
 
     //用于执行user表的操作
     UserModel userModel_;
+
+    //用于处理离线消息
+    offlineMsgModel offlineMsgModel_;
 
     //互斥锁保证userConMap_的线程安全，msgHandlerMap_在构造时就已经初始化且不在改变故不需要线程安全处理
     std::mutex mtx_;
