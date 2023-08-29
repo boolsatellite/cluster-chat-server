@@ -138,3 +138,9 @@ void ChatService::oneChat(const muduo::net::TcpConnectionPtr &conn, json &js, mu
     offlineMsgModel_.insert(toid,js.dump());        //保存对应的json字符串
 }
 
+void ChatService::reset() {
+    //将登录用户下线
+    userModel_.resetState();
+    exit(1);
+}
+

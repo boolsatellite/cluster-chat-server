@@ -40,7 +40,7 @@ MYSQL_RES* MySQL::query(std::string sql) {
         LOG_INFO << __FILE__ << ":" << __LINE__ << ":" << sql << "查询失败";
         return nullptr;
     }
-    LOG_INFO << __FILE__ << ":" << __LINE__ << ":" << sql << "查询车工";
+    LOG_INFO << __FILE__ << ":" << __LINE__ << ":" << sql << "查询成功";
     return mysql_use_result(conn_);
 }
 

@@ -30,6 +30,8 @@ public:
     void clientCloseException(const muduo::net::TcpConnectionPtr& conn);
     //一对一聊天业务
     void oneChat(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
+    //重置服务器，触发：服务端收到 SIGINT 中断
+    void reset();
 
     //获取消息对应的处理器
     MsgHandler getHandler(int msgid);
