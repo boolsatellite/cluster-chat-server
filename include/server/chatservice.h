@@ -10,6 +10,7 @@
 #include "unordered_map"
 #include "functional"
 #include "usermodel.h"
+#include "friendmodel.h"
 #include "offlinemessagemodel.h"
 #include "thread"
 #include "mutex"
@@ -30,6 +31,8 @@ public:
     void clientCloseException(const muduo::net::TcpConnectionPtr& conn);
     //一对一聊天业务
     void oneChat(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
+    //添加好友业务
+    void addFriend(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
     //重置服务器，触发：服务端收到 SIGINT 中断
     void reset();
 
@@ -48,7 +51,8 @@ private:
 
     //用于执行user表的操作
     UserModel userModel_;
-
+    //用于执行friend表操作
+    FriendModel friendModel_;
     //用于处理离线消息
     offlineMsgModel offlineMsgModel_;
 
