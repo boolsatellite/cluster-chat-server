@@ -33,8 +33,6 @@ std::vector<User> FriendModel::query(int userid) {
             return vec;
         }
     }
-
-    std::vector<User> vec;
-
+    return {};
 }
 

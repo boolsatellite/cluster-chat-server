@@ -33,7 +33,7 @@ public:
 
     std::string getstate() { return state; }
 
-private:
+protected:
     int id;
     std::string name;
     std::string password;

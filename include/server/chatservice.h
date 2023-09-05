@@ -11,6 +11,7 @@
 #include "functional"
 #include "usermodel.h"
 #include "friendmodel.h"
+#include "groupmodel.h"
 #include "offlinemessagemodel.h"
 #include "thread"
 #include "mutex"
@@ -35,7 +36,12 @@ public:
     void addFriend(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
     //重置服务器，触发：服务端收到 SIGINT 中断
     void reset();
-
+    //创建群组业务
+    void createGroup(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
+    //加入群则业务
+    void addGroup(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
+    //群组聊天业务
+    void groupChat(const muduo::net::TcpConnectionPtr& conn , json& js , muduo::Timestamp);
     //获取消息对应的处理器
     MsgHandler getHandler(int msgid);
 private:
@@ -55,6 +61,8 @@ private:
     FriendModel friendModel_;
     //用于处理离线消息
     offlineMsgModel offlineMsgModel_;
+    //用于处理群组消息
+    GroupModel groupModel_;
 
     //互斥锁保证userConMap_的线程安全，msgHandlerMap_在构造时就已经初始化且不在改变故不需要线程安全处理
     std::mutex mtx_;

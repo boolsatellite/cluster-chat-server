@@ -107,6 +107,12 @@ ChatService::ChatService() {
                                      std::placeholders::_3)});
     msgHandlerMap_.insert({ADD_FRIEND_MSG, std::bind(&ChatService::addFriend, this, std::placeholders::_1, std::placeholders::_2,
                                        std::placeholders::_3)});
+    msgHandlerMap_.insert({CREAT_GROUP_MSO, std::bind(&ChatService::createGroup, this, std::placeholders::_1, std::placeholders::_2,
+                                                     std::placeholders::_3)});
+    msgHandlerMap_.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, std::placeholders::_1, std::placeholders::_2,
+                                                      std::placeholders::_3)});
+    msgHandlerMap_.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, std::placeholders::_1, std::placeholders::_2,
+                                                    std::placeholders::_3)});
 }
 
 ChatService::MsgHandler ChatService::getHandler(int msgid) {
@@ -165,3 +171,35 @@ void ChatService::addFriend(const muduo::net::TcpConnectionPtr &conn, json &js, 
     friendModel_.insert(userid, friendid);    //添加好友信息
 }
 
+void ChatService::createGroup(const muduo::net::TcpConnectionPtr &conn, json &js, muduo::Timestamp) {
+    int userid = js["id"].get<int>();
+    std::string name = js["name"].get<std::string>();
+    std::string desc = js["desc"].get<std::string>();
+
+    //存储新创建的群组信息
+    Group group(-1 , name , desc);
+    if(groupModel_.createGroup(group)) {
+        groupModel_.addGroup(userid , group.getId() , "creator");
+    }
+}
+
+void ChatService::addGroup(const muduo::net::TcpConnectionPtr &conn, json &js, muduo::Timestamp) {
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+    groupModel_.addGroup(userid , groupid , "normal");
+}
+
+void ChatService::groupChat(const muduo::net::TcpConnectionPtr &conn, json &js, muduo::Timestamp) {
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+    std::vector<int> useridVec = groupModel_.queryGroupUser(userid , groupid);
+    for(int id : useridVec) {
+        std::lock_guard<std::mutex> lock(mtx_);
+        auto it = userConnMap_.find(id);
+        if(it != userConnMap_.end()) {
+            it->second->send(js.dump());
+        } else {
+            offlineMsgModel_.insert(id , js.dump());
+        }
+    }
+}
