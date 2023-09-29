@@ -206,6 +206,60 @@ db/db.cc.s:
 	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/db/db.cc.s
 .PHONY : db/db.cc.s
 
+friendmodel.o: friendmodel.cc.o
+
+.PHONY : friendmodel.o
+
+# target to build an object file
+friendmodel.cc.o:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/friendmodel.cc.o
+.PHONY : friendmodel.cc.o
+
+friendmodel.i: friendmodel.cc.i
+
+.PHONY : friendmodel.i
+
+# target to preprocess a source file
+friendmodel.cc.i:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/friendmodel.cc.i
+.PHONY : friendmodel.cc.i
+
+friendmodel.s: friendmodel.cc.s
+
+.PHONY : friendmodel.s
+
+# target to generate assembly for a file
+friendmodel.cc.s:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/friendmodel.cc.s
+.PHONY : friendmodel.cc.s
+
+groupmodel.o: groupmodel.cc.o
+
+.PHONY : groupmodel.o
+
+# target to build an object file
+groupmodel.cc.o:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.o
+.PHONY : groupmodel.cc.o
+
+groupmodel.i: groupmodel.cc.i
+
+.PHONY : groupmodel.i
+
+# target to preprocess a source file
+groupmodel.cc.i:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.i
+.PHONY : groupmodel.cc.i
+
+groupmodel.s: groupmodel.cc.s
+
+.PHONY : groupmodel.s
+
+# target to generate assembly for a file
+groupmodel.cc.s:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.s
+.PHONY : groupmodel.cc.s
+
 main.o: main.cc.o
 
 .PHONY : main.o
@@ -232,6 +286,33 @@ main.s: main.cc.s
 main.cc.s:
 	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cc.s
 .PHONY : main.cc.s
+
+offlinemessagemodel.o: offlinemessagemodel.cc.o
+
+.PHONY : offlinemessagemodel.o
+
+# target to build an object file
+offlinemessagemodel.cc.o:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cc.o
+.PHONY : offlinemessagemodel.cc.o
+
+offlinemessagemodel.i: offlinemessagemodel.cc.i
+
+.PHONY : offlinemessagemodel.i
+
+# target to preprocess a source file
+offlinemessagemodel.cc.i:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cc.i
+.PHONY : offlinemessagemodel.cc.i
+
+offlinemessagemodel.s: offlinemessagemodel.cc.s
+
+.PHONY : offlinemessagemodel.s
+
+# target to generate assembly for a file
+offlinemessagemodel.cc.s:
+	cd /mnt/d/github/cluster-chat-server/cmake-build-debug && $(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cc.s
+.PHONY : offlinemessagemodel.cc.s
 
 usermodel.o: usermodel.cc.o
 
@@ -278,9 +359,18 @@ help:
 	@echo "... db/db.o"
 	@echo "... db/db.i"
 	@echo "... db/db.s"
+	@echo "... friendmodel.o"
+	@echo "... friendmodel.i"
+	@echo "... friendmodel.s"
+	@echo "... groupmodel.o"
+	@echo "... groupmodel.i"
+	@echo "... groupmodel.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... offlinemessagemodel.o"
+	@echo "... offlinemessagemodel.i"
+	@echo "... offlinemessagemodel.s"
 	@echo "... usermodel.o"
 	@echo "... usermodel.i"
 	@echo "... usermodel.s"

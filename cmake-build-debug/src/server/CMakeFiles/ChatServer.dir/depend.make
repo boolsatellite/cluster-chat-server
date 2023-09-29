@@ -3,12 +3,22 @@
 
 src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/chatserver.h
 src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/chatservice.h
+src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/friendmodel.h
+src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/group.h
+src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/groupmodel.h
+src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/groupuser.h
+src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/offlinemessagemodel.h
 src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/user.h
 src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../include/server/usermodel.h
 src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../thirdparty/json.hpp
 src/server/CMakeFiles/ChatServer.dir/chatserver.cc.o: ../src/server/chatserver.cc
 
 src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/chatservice.h
+src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/friendmodel.h
+src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/group.h
+src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/groupmodel.h
+src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/groupuser.h
+src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/offlinemessagemodel.h
 src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/public.h
 src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/user.h
 src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../include/server/usermodel.h
@@ -18,8 +28,33 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cc.o: ../src/server/chatservice
 src/server/CMakeFiles/ChatServer.dir/db/db.cc.o: ../include/server/db/db.h
 src/server/CMakeFiles/ChatServer.dir/db/db.cc.o: ../src/server/db/db.cc
 
+src/server/CMakeFiles/ChatServer.dir/friendmodel.cc.o: ../include/server/db/db.h
+src/server/CMakeFiles/ChatServer.dir/friendmodel.cc.o: ../include/server/friendmodel.h
+src/server/CMakeFiles/ChatServer.dir/friendmodel.cc.o: ../include/server/user.h
+src/server/CMakeFiles/ChatServer.dir/friendmodel.cc.o: ../src/server/friendmodel.cc
+
+src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.o: ../include/server/db/db.h
+src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.o: ../include/server/group.h
+src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.o: ../include/server/groupmodel.h
+src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.o: ../include/server/groupuser.h
+src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.o: ../include/server/user.h
+src/server/CMakeFiles/ChatServer.dir/groupmodel.cc.o: ../src/server/groupmodel.cc
+
 src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/chatserver.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/chatservice.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/friendmodel.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/group.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/groupmodel.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/groupuser.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/offlinemessagemodel.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/user.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../include/server/usermodel.h
+src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../thirdparty/json.hpp
 src/server/CMakeFiles/ChatServer.dir/main.cc.o: ../src/server/main.cc
+
+src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cc.o: ../include/server/db/db.h
+src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cc.o: ../include/server/offlinemessagemodel.h
+src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cc.o: ../src/server/offlinemessagemodel.cc
 
 src/server/CMakeFiles/ChatServer.dir/usermodel.cc.o: ../include/server/db/db.h
 src/server/CMakeFiles/ChatServer.dir/usermodel.cc.o: ../include/server/user.h

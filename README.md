@@ -1,4 +1,66 @@
 # cluster-chat-server
+
+## 编码中的记录
+
+### 业务和网络的分离
+
+```c++
+chatserver.cc
+void ChatServer::onMessage(const TcpConnectionPtr &conn, Buffer *buffer, Timestamp time) {
+    std::string buf = buffer->retrieveAllAsString();
+    json js = json::parse(buf);
+}
+```
+
+这里将从网络中接收的json字符串发序列化存放在```json```对象中，之后要处理json中的东西，也就是业务层面的代码，我们当然不希望网络层和业务层的代码杂糅在一起，便想办法进行分离，实现解耦合的方法一般有两种，**1. 利用抽象类 2. 利用回调函数**
+
+这里采用回调函数来解决，引入处理业务类```ChatService```，类中存储了key消息类型(消息id号int)value对应回调函数(functional对象)，```ChatService```在构造函数中完成各类消息的注册，并对外提供接口```ChatService::MsgHandler ChatService::getHandler(int msgid)```查询消息id对应的回调函数，从而实现业务代码与网络代码分离
+
+### 数库操作和业务的分离，及数据库之间的分离
+
+```c++
+void ChatService::reg(const muduo::net::TcpConnectionPtr &conn, json &js, muduo::Timestamp) {
+    std::string name = js["name"]; 
+    std::string pwd = js["password"];
+    User user;
+    user.setname(name);
+    user.setpassword(pwd);
+    bool state = userModel.insert(user);
+```
+
+这里将数据库的每个表单独作为一个类，只提供相应的成员和```get set```方法，而将用于数据库操作的类为```UserModel```提供了以User为形参的数据库操作函数```bool insert(User user);```，这样可以在更换数据库时只修改```UserModel```类，```ChatService```类中存在私有成员```UserModel userModel;  //用于执行user表的操作```，这样就可以通过```userModel```对象提供的方法操作数据库，达到了业务与数据库操作分离
+
+### json的操作
+
+```c++
+            std::vector<User> userVec = friendModel_.query(user.getid());
+            if(!userVec.empty()) {
+                std::vector<std::string> vec2;
+                for(auto & i : userVec) {
+                    json json1;
+                    json1["id"] = user.getid();
+                    json1["name"] = user.getname();
+                    json1["state"] = user.getstate();
+                    vec2.push_back(json1.dump());
+                }
+                response["friend"] = vec2;
+            }
+```
+
+通过数据库查询将User对象存放到vector容器中，用于User是自定义类型故无法执行```response["friend"] = userVec```，退而求其次将每个```User```对象转化成对应```json```以数组的方式存储，那么是不是可以为每个对象提供到对呀json的转化这样就实现了通过字符串进行对象之间的传递，在网络环境中格外好用
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 ## json for modern c++的使用
 
 ### json的序列化
@@ -139,9 +201,10 @@ CREATE TABLE GroupUser (
 OfflineMessage表
 
 ````sql
-CREATE TABLE offline_messages (
+CREATE TABLE OfflineMessage (
     userid INT NOT NULL,
     message VARCHAR(500) NOT NULL
 );
 ````
 
+折腾了3天mysql：https://blog.csdn.net/weixin_45086957/article/details/124805201 感谢这篇博客

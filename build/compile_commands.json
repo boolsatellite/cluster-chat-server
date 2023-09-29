@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/chatserver.cc.o -c /mnt/d/github/cluster-chat-server/src/server/chatserver.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/chatserver.cc"
+},
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/chatservice.cc.o -c /mnt/d/github/cluster-chat-server/src/server/chatservice.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/chatservice.cc"
+},
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/friendmodel.cc.o -c /mnt/d/github/cluster-chat-server/src/server/friendmodel.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/friendmodel.cc"
+},
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/groupmodel.cc.o -c /mnt/d/github/cluster-chat-server/src/server/groupmodel.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/groupmodel.cc"
+},
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/main.cc.o -c /mnt/d/github/cluster-chat-server/src/server/main.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/main.cc"
+},
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/offlinemessagemodel.cc.o -c /mnt/d/github/cluster-chat-server/src/server/offlinemessagemodel.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/offlinemessagemodel.cc"
+},
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/usermodel.cc.o -c /mnt/d/github/cluster-chat-server/src/server/usermodel.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/usermodel.cc"
+},
+{
+  "directory": "/mnt/d/github/cluster-chat-server/build/src/server",
+  "command": "/usr/bin/g++   -I/mnt/d/github/cluster-chat-server/thirdparty -I/mnt/d/github/cluster-chat-server/include -I/mnt/d/github/cluster-chat-server/include/server -I/mnt/d/github/cluster-chat-server/include/server/db  -g -g   -std=gnu++14 -o CMakeFiles/ChatServer.dir/db/db.cc.o -c /mnt/d/github/cluster-chat-server/src/server/db/db.cc",
+  "file": "/mnt/d/github/cluster-chat-server/src/server/db/db.cc"
+}
+]

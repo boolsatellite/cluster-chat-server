@@ -42,3 +42,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/mnt/d/github/cluster-chat-server/cmake-build-debug/src/server/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/mnt/d/github/cluster-chat-server/cmake-build-debug/src/client/cmake_install.cmake")
+endif()
+

@@ -1,0 +1,7 @@
+/mnt/d/github/cluster-chat-server/build/CMakeFiles/rebuild_cache.dir
+/mnt/d/github/cluster-chat-server/build/CMakeFiles/edit_cache.dir
+/mnt/d/github/cluster-chat-server/build/src/CMakeFiles/rebuild_cache.dir
+/mnt/d/github/cluster-chat-server/build/src/CMakeFiles/edit_cache.dir
+/mnt/d/github/cluster-chat-server/build/src/server/CMakeFiles/rebuild_cache.dir
+/mnt/d/github/cluster-chat-server/build/src/server/CMakeFiles/edit_cache.dir
+/mnt/d/github/cluster-chat-server/build/src/server/CMakeFiles/ChatServer.dir
